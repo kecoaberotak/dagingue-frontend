@@ -5,8 +5,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#FFFBFD",
+        secondary: "#9D2330",
+        accent: "#666",
+        neutral: "#F0F0F0",
       },
       fontFamily: {
         montserrat: ["var(--font-montserrat)"],
