@@ -1,9 +1,18 @@
-export default function Home() {
+import Header from "@/components/organism/Header";
+import { getMedia } from "@/services/content.service";
+
+export default async function Home() {
+  getMedia((res, error) => {
+    if (error) {
+      console.error("Error fetching media:", error.message);
+    } else if (res) {
+      console.log("Media data:", res);
+    }
+  });
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <h1>Heading 1</h1>
-      <h2>Heading 2</h2>
-      <h3>Heading 3</h3>
+    <div>
+      <Header />
     </div>
   );
 }
