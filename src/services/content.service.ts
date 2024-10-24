@@ -1,22 +1,42 @@
 import { ApiResponse, MediaResponse } from "@/types/response.types";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
-export const getMedia = async (callback: (data: MediaResponse | null, error?: AxiosError | Error) => void) => {
+export const getMedia = async (): Promise<MediaResponse> => {
   try {
     const response = await axios.get<ApiResponse>(`${apiUrl}/content/media`);
-    callback(response.data.data);
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      // Mengambil statusCode dan message dari response jika tersedia
-      if (error.response) {
-        callback(error.response.data, new Error(error.response.data.message || "Unknown error from server"));
-      } else {
-        callback(null, error);
-      }
+    if (response.data.status) {
+      return response.data.data;
     } else {
-      callback(null, new Error("Unexpected error occurred"));
+      // throw error kalau status false
+      throw new Error(
+        JSON.stringify({
+          status: response.data.status,
+          statusCode: response.data.statusCode,
+          message: response.data.message,
+        })
+      );
+    }
+  } catch (error: unknown) {
+    // Tangain error Axios
+    if (axios.isAxiosError(error)) {
+      throw new Error(
+        JSON.stringify({
+          status: error.response?.data?.status || false,
+          statusCode: error.response?.data?.statusCode || 500,
+          message: error.response?.data?.message || "Unexpected error occurred",
+        })
+      );
+    } else {
+      // tangain error lainnya
+      throw new Error(
+        JSON.stringify({
+          status: false,
+          statusCode: 500,
+          message: "Internal server error",
+        })
+      );
     }
   }
 };
