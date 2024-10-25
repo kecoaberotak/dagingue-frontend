@@ -5,11 +5,17 @@ import { MediaResponse } from "@/types/response.types";
 export default async function Homepage() {
   try {
     // fetch data API
-    const data: MediaResponse = await getMedia();
-    console.log(data, "DATA");
+    const mediaData: MediaResponse = await getMedia();
+    const headerMedia = {
+      hero_image: mediaData.hero_image,
+      logo_image: mediaData.logo_image,
+      whatsapp: mediaData.whatsapp,
+      instagram: mediaData.instagram,
+      shopee: mediaData.shopee,
+    };
     return (
       <div>
-        <Header />
+        <Header headerMedia={headerMedia} />
       </div>
     );
   } catch (error: unknown) {
