@@ -1,0 +1,36 @@
+.about {
+  @apply grid justify-center content-center mb-[50px] md:grid-cols-2;
+}
+
+.about_images {
+  @apply justify-center items-center relative left-20 -top-[50px] hidden md:flex md:order-1 md:scale-90 lg:scale-100;
+}
+
+.image1 {
+  @apply w-[282px] h-[282px] border-[3px] border-secondary;
+}
+
+.image2 {
+  @apply w-[201px] border-[3px] border-secondary relative -left-[110px] top-[145px];
+}
+
+.article-about {
+  @apply md:order-2 grid gap-[8px] p-6 leading-normal md:scale-90;
+}
+
+.article-about h1 {
+  @apply text-secondary font-bold text-lg;
+}
+
+.article-about h2 {
+  @apply text-3xl;
+}
+
+.article-about li {
+  @apply indent-4 list-none;
+}
+
+.article-about li::before {
+  content: "\25CB"; /*unicode disc "\25CB"*/
+  @apply text-secondary;
+}
