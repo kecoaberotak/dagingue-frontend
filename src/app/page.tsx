@@ -1,6 +1,7 @@
 import Header from "@/components/organism/Header";
-import { getMedia } from "@/services/content.service";
-import { MediaResponse } from "@/types/response.types";
+import About from "@/components/organism/About";
+import { getAbout, getMedia } from "@/services/content.service";
+import { AboutResponse, MediaResponse } from "@/types/response.types";
 
 export default async function Homepage() {
   try {
@@ -13,9 +14,12 @@ export default async function Homepage() {
       instagram: mediaData.instagram,
       shopee: mediaData.shopee,
     };
+
+    const aboutData: AboutResponse = await getAbout();
     return (
       <div>
         <Header headerMedia={headerMedia} />
+        <About aboutData={aboutData} />
       </div>
     );
   } catch (error: unknown) {
