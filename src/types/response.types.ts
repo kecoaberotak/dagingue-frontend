@@ -11,13 +11,20 @@ export interface MediaResponse {
   logo_image: string;
   footer_image: string;
   background_image: string;
-  createAt: Date;
+  createdAt: Date;
+  updatedAt: Date;
+}
+export interface AboutResponse {
+  desc: string;
+  image1: string;
+  image2: string;
+  createdAt: Date;
   updatedAt: Date;
 }
 
-export interface ApiResponse {
+export interface ApiResponse<T> {
   status: boolean;
   statusCode: number;
   message: string;
-  data: MediaResponse;
+  data: T;
 }
