@@ -1,7 +1,8 @@
 import Header from "@/components/organism/Header";
 import About from "@/components/organism/About";
-import { getAbout, getMedia } from "@/services/content.service";
-import { AboutResponse, MediaResponse } from "@/types/response.types";
+import ProductPotong from "@/components/organism/ProductPotong";
+import { getAbout, getMedia, getPotong } from "@/services/content.service";
+import { AboutResponse, MediaResponse, PotongResponse } from "@/types/response.types";
 
 export default async function Homepage() {
   try {
@@ -16,10 +17,14 @@ export default async function Homepage() {
     };
 
     const aboutData: AboutResponse = await getAbout();
+
+    const potongData: PotongResponse = await getPotong();
+
     return (
       <div>
         <Header headerMedia={headerMedia} />
         <About aboutData={aboutData} />
+        <ProductPotong potongData={potongData} />
       </div>
     );
   } catch (error: unknown) {
