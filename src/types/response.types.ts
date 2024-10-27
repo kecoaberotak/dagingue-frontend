@@ -12,15 +12,26 @@ export interface MediaResponse {
   footer_image: string;
   background_image: string;
   createdAt: Date;
-  updatedAt: Date;
+  updatedAt?: Date;
 }
 export interface AboutResponse {
   desc: string;
   image1: string;
   image2: string;
   createdAt: Date;
-  updatedAt: Date;
+  updatedAt?: Date;
 }
+
+export interface PotongItem {
+  createdAt: Date;
+  updatedAt?: Date;
+  desc: string;
+  image: string;
+  name: string;
+  price: number;
+}
+
+export type PotongResponse = PotongItem[];
 
 export interface ApiResponse<T> {
   status: boolean;
