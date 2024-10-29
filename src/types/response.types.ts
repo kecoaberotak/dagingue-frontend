@@ -15,6 +15,7 @@ export interface MediaResponse {
   updatedAt?: Date;
 }
 export interface AboutResponse {
+  id: string;
   desc: string;
   image1: string;
   image2: string;
@@ -23,6 +24,7 @@ export interface AboutResponse {
 }
 
 export interface PotongItem {
+  id: string;
   createdAt: Date;
   updatedAt?: Date;
   desc: string;
