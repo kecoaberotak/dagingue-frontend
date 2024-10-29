@@ -24,7 +24,9 @@ export default async function Homepage() {
       <div>
         <Header headerMedia={headerMedia} />
         <About aboutData={aboutData} />
-        <ProductPotong potongData={potongData} />
+        <div className="mb-[50px] grid gap-[50px]" id="product">
+          <ProductPotong potongData={potongData} bg_image={mediaData.background_image} />
+        </div>
       </div>
     );
   } catch (error: unknown) {
