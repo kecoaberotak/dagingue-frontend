@@ -1,6 +1,7 @@
 import Header from "@/components/organism/Header";
 import About from "@/components/organism/About";
 import ProductPotong from "@/components/organism/ProductPotong";
+import ProductBumbu from "@/components/organism/ProductBumbu";
 import { getAbout, getMedia, getPotong } from "@/services/content.service";
 import { AboutResponse, MediaResponse, PotongResponse } from "@/types/response.types";
 
@@ -26,6 +27,7 @@ export default async function Homepage() {
         <About aboutData={aboutData} />
         <div className="mb-[50px] grid gap-[50px]" id="product">
           <ProductPotong potongData={potongData} bg_image={mediaData.background_image} />
+          <ProductBumbu />
         </div>
       </div>
     );
