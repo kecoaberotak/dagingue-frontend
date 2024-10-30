@@ -1,3 +1,5 @@
+"use client";
+
 import { BumbuDataContextType, BumbuResponse } from "@/types/response.types";
 import { createContext, useState } from "react";
 
