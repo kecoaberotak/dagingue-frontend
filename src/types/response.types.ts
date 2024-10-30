@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface MediaResponse {
   id: string;
   whatsapp: string;
@@ -21,6 +23,23 @@ export interface AboutResponse {
   image2: string;
   createdAt: Date;
   updatedAt?: Date;
+}
+
+export interface BumbuItem {
+  id: string;
+  desc: string;
+  image: string;
+  name: string;
+  price: number;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+export type BumbuResponse = BumbuItem[];
+
+export interface BumbuDataContextType {
+  bumbuData: BumbuResponse;
+  setBumbuData: Dispatch<SetStateAction<BumbuResponse>>;
 }
 
 export interface PotongItem {
