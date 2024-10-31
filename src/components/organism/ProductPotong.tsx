@@ -1,6 +1,7 @@
 import "@/components/organism/product.styles.css";
 import { PotongResponse } from "@/types/response.types";
 import Card from "../molecules/Card";
+import Title from "../atoms/Title";
 
 const ProductPotong: React.FC<{ potongData: PotongResponse; bg_image: string }> = ({ potongData, bg_image }) => {
   let classname = "";
@@ -11,14 +12,9 @@ const ProductPotong: React.FC<{ potongData: PotongResponse; bg_image: string }> 
   } else classname = "cards-product-2";
   return (
     <div className="product-potong" style={{ backgroundImage: `url(${bg_image})` }}>
-      {/* <Title classname="title-section potong" title="Produk" subTitle="Jenis Potongan" /> */}
-      <section className="title-section potong">
-        <h3>Product</h3>
-        <p>Jenis Potongan</p>
-      </section>
+      <Title className="title-section potong" title="Produk" subTitle="Jenis Potongan" />
       <section className={classname}>
         {potongData.map((potong) => {
-          // return <Card key={potong._id} tipe={potong.title} berat={potong.desc} image={potong.file} />;
           return <Card key={potong.id} tipe={potong.name} berat={potong.desc} image={potong.image} />;
         })}
       </section>
