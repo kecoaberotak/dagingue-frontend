@@ -5,6 +5,7 @@ import ProductBumbu from "@/components/organism/ProductBumbu";
 import { getAbout, getBumbu, getMedia, getPotong } from "@/services/content.service";
 import { AboutResponse, BumbuResponse, MediaResponse, PotongResponse } from "@/types/response.types";
 import BumbuDataProvider from "@/contexts/BumbuDataContext";
+import "@/components/organism/product.styles.css";
 
 export default async function Homepage() {
   try {

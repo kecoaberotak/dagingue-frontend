@@ -1,4 +1,3 @@
-import "@/components/organism/product.styles.css";
 import { PotongResponse } from "@/types/response.types";
 import Card from "../molecules/Card";
 import Title from "../atoms/Title";
