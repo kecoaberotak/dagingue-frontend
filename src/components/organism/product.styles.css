@@ -60,3 +60,50 @@
 .product-bumbu {
   @apply grid justify-center gap-[50px];
 }
+
+.gallery {
+  @apply grid gap-[25px] scale-90 md:scale-100;
+}
+
+.gallery-info {
+  @apply grid grid-flow-col box-border sm:gap-16;
+}
+
+.gallery-info-image {
+  @apply w-[138px] h-[138px] border-[3px] border-secondary hidden sm:block sm:w-[276px] sm:h-[276px];
+}
+
+.gallery-info-bumbu {
+  @apply self-center flex flex-col gap-[15px] justify-self-start;
+}
+
+.gallery-info-bumbu h2 {
+  @apply scale-95 sm:scale-100;
+}
+.gallery-info-bumbu p {
+  @apply text-sm scale-95 sm:scale-100 sm:text-base;
+}
+
+.gallery-items {
+  @apply grid grid-cols-5 grid-rows-1 gap-3;
+}
+
+.gallery-item-image {
+  @apply relative cursor-pointer;
+}
+
+.gallery-item-image img {
+  @apply w-[66px] h-[66px] cursor-pointer border-[3px] border-secondary box-border sm:w-[132px] sm:h-[132px];
+}
+
+.cover {
+  @apply absolute top-0 h-[66px] w-[66px] bg-secondary opacity-0 sm:w-[132px] sm:h-[132px];
+}
+
+.cover:hover {
+  @apply opacity-50;
+}
+
+.selected {
+  @apply opacity-50;
+}
