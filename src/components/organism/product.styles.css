@@ -55,3 +55,8 @@
 .potong-img {
   @apply relative -top-9 sm:-top-16;
 }
+
+/* ====== BUMBU ====== */
+.product-bumbu {
+  @apply grid justify-center gap-[50px];
+}
