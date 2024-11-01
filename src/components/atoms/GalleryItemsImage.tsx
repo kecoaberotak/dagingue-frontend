@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useSelectedImage } from "@/hooks/useSelectedImage ";
+import { useSelectedImage } from "@/hooks/useSelectedImage";
 
 const GalleryItemsImage: React.FC<{ name: string; desc: string; image: string }> = ({ name, desc, image }) => {
   const { setSelectedData } = useSelectedImage();

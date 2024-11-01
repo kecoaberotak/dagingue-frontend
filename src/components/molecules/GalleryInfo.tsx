@@ -1,7 +1,7 @@
 "use client";
 
 import { useBumbuData } from "@/hooks/useBumbuData";
-import { useSelectedImage } from "@/hooks/useSelectedImage ";
+import { useSelectedImage } from "@/hooks/useSelectedImage";
 import Image from "next/image";
 
 const GalleryInfo = () => {
