@@ -5,6 +5,7 @@ import { BumbuResponse } from "@/types/response.types";
 import { useEffect } from "react";
 import Title from "../atoms/Title";
 import GalleryInfo from "../molecules/GalleryInfo";
+import GalleryItems from "../molecules/GalleryItems";
 
 const ProductBumbu: React.FC<{ bumbuData: BumbuResponse }> = ({ bumbuData }) => {
   const { setBumbuData } = useBumbuData();
@@ -17,6 +18,7 @@ const ProductBumbu: React.FC<{ bumbuData: BumbuResponse }> = ({ bumbuData }) => 
       <Title className="title-section bumbu" title="Produk" subTitle="Varian Bumbu" />
       <section className="gallery">
         <GalleryInfo />
+        <GalleryItems />
       </section>
     </section>
   );
