@@ -2,6 +2,7 @@ import Header from "@/components/organism/Header";
 import About from "@/components/organism/About";
 import ProductPotong from "@/components/organism/ProductPotong";
 import ProductBumbu from "@/components/organism/ProductBumbu";
+import Footer from "@/components/organism/Footer";
 import { getAbout, getBumbu, getMedia, getPotong } from "@/services/content.service";
 import { AboutResponse, BumbuResponse, MediaResponse, PotongResponse } from "@/types/response.types";
 import BumbuDataProvider from "@/contexts/BumbuDataContext";
@@ -19,6 +20,19 @@ export default async function Homepage() {
       shopee: mediaData.shopee,
     };
 
+    const footerMedia = {
+      footer_image: mediaData.footer_image,
+      logo_image: mediaData.logo_image,
+      background_image: mediaData.background_image,
+      address: mediaData.address,
+      email: mediaData.email,
+      phone: mediaData.phone,
+      maps: mediaData.maps,
+      whatsapp: mediaData.whatsapp,
+      shopee: mediaData.shopee,
+      instagram: mediaData.instagram,
+    };
+
     const aboutData: AboutResponse = await getAbout();
 
     const potongData: PotongResponse = await getPotong();
@@ -29,12 +43,13 @@ export default async function Homepage() {
       <div>
         <Header headerMedia={headerMedia} />
         <About aboutData={aboutData} />
-        <div className="mb-[50px] grid gap-[50px]" id="product">
+        <section className="mb-[50px] grid gap-[50px]" id="product">
           <ProductPotong potongData={potongData} bg_image={mediaData.background_image} />
           <BumbuDataProvider>
             <ProductBumbu bumbuData={bumbuData} />
           </BumbuDataProvider>
-        </div>
+        </section>
+        <Footer footerMedia={footerMedia} />
       </div>
     );
   } catch (error: unknown) {
