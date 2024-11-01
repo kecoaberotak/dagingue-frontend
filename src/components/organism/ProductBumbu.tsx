@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import Title from "../atoms/Title";
 import GalleryInfo from "../molecules/GalleryInfo";
 import GalleryItems from "../molecules/GalleryItems";
+import { SelectedImageProvider } from "@/contexts/SelectedImageContext";
 
 const ProductBumbu: React.FC<{ bumbuData: BumbuResponse }> = ({ bumbuData }) => {
   const { setBumbuData } = useBumbuData();
@@ -17,8 +18,10 @@ const ProductBumbu: React.FC<{ bumbuData: BumbuResponse }> = ({ bumbuData }) => 
     <section className="product-bumbu">
       <Title className="title-section bumbu" title="Produk" subTitle="Varian Bumbu" />
       <section className="gallery">
-        <GalleryInfo />
-        <GalleryItems />
+        <SelectedImageProvider>
+          <GalleryInfo />
+          <GalleryItems />
+        </SelectedImageProvider>
       </section>
     </section>
   );
