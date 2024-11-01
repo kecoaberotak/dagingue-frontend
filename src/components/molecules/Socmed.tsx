@@ -6,7 +6,7 @@ interface SocmedProps {
 
 const Socmed: React.FC<SocmedProps> = ({ socmedMedia }) => {
   return (
-    <ul className="socmed">
+    <ul className={socmedMedia.className ? socmedMedia.className : "socmed"}>
       <li className="socmed-icon">
         <a href={socmedMedia.instagram} target="_blank" rel="noreferrer">
           <svg width="28" role="img" className="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
