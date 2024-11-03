@@ -10,7 +10,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ headerMedia }) => {
   return (
     <header id="home" className="header" style={{ backgroundImage: `url(${headerMedia.hero_image})` }}>
-      <Logo logo_image={headerMedia.logo_image} />
+      <Logo className="logo" logo_image={headerMedia.logo_image} />
       <ul className="navbar-header">
         <li>
           <a href="#about">Tentang Kami</a>
