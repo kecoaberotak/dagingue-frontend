@@ -21,7 +21,7 @@
 
 /* ================ Footer - Contact ================== */
 .footer-contact {
-  @apply w-full h-[378px] grid grid-cols-2 justify-center content-center md:gap-[50px];
+  @apply w-full h-[378px] grid grid-cols-2 content-center md:gap-[50px];
 }
 
 .contact-info {
@@ -32,20 +32,14 @@
   @apply grid gap-2 justify-items-start items-center text-primary font-semibold;
 }
 
-.contact-info-main p:last-child {
-  @apply mt-[7px];
-}
-
 .contact-info-main a {
-  @apply text-primary;
+  @apply hover:text-accent;
 }
 
 .contact-info-socmed {
-  @apply flex gap-5 content-center justify-start;
+  @apply flex gap-5 justify-start;
 }
 
 .contact-logo {
   @apply flex justify-center items-center scale-90 sm:scale-95 md:scale-100;
 }
-
-/* edit lagi style nya */
