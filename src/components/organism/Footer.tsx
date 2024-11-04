@@ -26,7 +26,7 @@ const Footer: React.FC<{ footerMedia: FooterMedia }> = ({ footerMedia }) => {
           </section>
           <Socmed socmedMedia={{ className: "contact-info-socmed", whatsapp: footerMedia.whatsapp, shopee: footerMedia.shopee, instagram: footerMedia.instagram }} />
         </div>
-        <Logo logo_image={footerMedia.logo_image} />
+        <Logo className="contact-logo logo" logo_image={footerMedia.logo_image} />
       </section>
     </footer>
   );
