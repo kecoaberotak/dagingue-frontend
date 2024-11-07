@@ -24,10 +24,10 @@ const Dashboard = () => {
     <section className="admin-panel">
       <nav className="content-nav">
         <ul>
-          {Object.keys(components).map((page) => (
-            <Fragment key={page}>
+          {Object.keys(components).map((component) => (
+            <Fragment key={component}>
               <li>
-                <a onClick={() => setHalaman(page as HalamanKey)}>{page.charAt(0).toUpperCase() + page.slice(1)}</a>
+                <a onClick={() => setHalaman(component as HalamanKey)}>{component.charAt(0).toUpperCase() + component.slice(1)}</a>
               </li>
               <li>
                 <span>/</span>
