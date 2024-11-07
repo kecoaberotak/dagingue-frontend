@@ -1,11 +1,13 @@
-.header {
-  @apply w-full h-[379px] bg-no-repeat bg-cover bg-center mb-[50px] grid justify-center;
-}
+@layer components {
+  .header {
+    @apply w-full h-[379px] bg-no-repeat bg-cover bg-center mb-[50px] grid justify-center;
+  }
 
-.navbar-header {
-  @apply grid grid-flow-col justify-center text-sm gap-[15px] mt-[50px] mb-[50px] md:mb-0 sm:text-base sm:gap-[22px];
-}
+  .navbar-header {
+    @apply grid grid-flow-col justify-center text-sm gap-[15px] mt-[50px] mb-[50px] md:mb-0 sm:text-base sm:gap-[22px];
+  }
 
-.navbar-header a {
-  @apply text-primary font-bold border-b-[0px] border-secondary hover:border-b-[3px] duration-100;
+  .navbar-header a {
+    @apply text-primary font-bold border-b-[0px] border-secondary hover:border-b-[3px] duration-100;
+  }
 }
