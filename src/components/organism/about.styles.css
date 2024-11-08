@@ -1,3 +1,5 @@
+@tailwind components;
+
 @layer components {
   .about {
     @apply grid justify-center content-center mb-[50px] md:grid-cols-2;
