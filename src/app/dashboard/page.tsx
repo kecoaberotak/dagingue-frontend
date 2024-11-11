@@ -1,10 +1,11 @@
 "use client";
 
 import { Fragment, useState } from "react";
+import AdminAbout from "@/components/organism/AdminAbout";
 
 // Definisikan komponen placeholder untuk setiap halaman
 const components = {
-  about: () => <h1>About</h1>,
+  about: () => <AdminAbout />,
   media: () => <h1>Media</h1>,
   bumbu: () => <h1>Bumbu</h1>,
   potong: () => <h1>Potong</h1>,
