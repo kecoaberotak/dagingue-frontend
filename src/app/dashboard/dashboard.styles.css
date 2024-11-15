@@ -94,23 +94,19 @@
   }
 
   /* ====== Button ====== */
-  .button {
-    @apply border rounded-md cursor-pointer;
-  }
-
   .form-button {
     @apply flex mb-14 gap-1;
   }
 
-  .form-button Button {
-    @apply bg-black text-white text-sm font-semibold py-1 px-2 hover:bg-accent duration-300;
+  .button {
+    @apply border rounded-md cursor-pointer bg-black text-white text-sm font-semibold py-1 px-2 hover:bg-accent duration-300;
   }
 
   .button-cancel Button {
     @apply bg-red-500 border-red-500 font-semibold hover:bg-red-400 hover:border-red-400 duration-300;
   }
 
-  .button-add Button {
+  /* .button-add Button {
     @apply mb-14 bg-black text-white text-sm font-semibold py-1 px-2 hover:bg-accent duration-300;
-  }
+  } */
 }
