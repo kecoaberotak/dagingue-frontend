@@ -4,7 +4,7 @@ import { getAbout } from "@/services/about.service";
 import { AboutResponse } from "@/types/response.types";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import ReactQuill from "react-quill";
+import dynamic from "next/dynamic";
 
 const AdminAbout = () => {
   const [data, setData] = useState<AboutResponse | null>(null);
@@ -13,10 +13,11 @@ const AdminAbout = () => {
   const [srcPreview2, setSrcPreview2] = useState<string | undefined>(undefined);
   const [content, setContent] = useState<string | undefined>(undefined);
 
+  // Setup react-quill
+  const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
   const modules = {
     toolbar: [[{ header: [1, 2, false] }], ["bold", "italic", "underline", "strike", "blockquote"], [{ list: "ordered" }, { list: "bullet" }, { indent: "-1" }, { indent: "+1" }], ["link", "image"], ["clean"]],
   };
-
   const formats = ["header", "bold", "italic", "underline", "strike", "blockquote", "list", "bullet", "indent", "link", "image"];
 
   useEffect(() => {
