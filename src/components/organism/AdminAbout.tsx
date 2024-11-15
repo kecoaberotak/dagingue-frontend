@@ -3,6 +3,7 @@
 import { getAbout } from "@/services/about.service";
 import { AboutResponse } from "@/types/response.types";
 import { useEffect, useState } from "react";
+import Button from "../atoms/Button";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
@@ -91,9 +92,7 @@ const AdminAbout = () => {
             <label>Isi Content : </label>
             <ReactQuill theme="snow" value={(content ?? data.desc) || ""} onChange={setContent} modules={modules} formats={formats} />
             <div className="form-button">
-              <button type="submit" className="button">
-                submit
-              </button>
+              <Button type={"submit"}>Submit</Button>
             </div>
           </form>
         </>
