@@ -94,6 +94,10 @@
   }
 
   /* ====== Button ====== */
+  .button {
+    @apply border rounded-md cursor-pointer;
+  }
+
   .form-button {
     @apply flex mb-14 gap-1;
   }
