@@ -99,7 +99,7 @@
   }
 
   .form-button Button {
-    @apply bg-black text-white text-sm font-semibold py-1 px-2 hover:bg-accborder-accent duration-300;
+    @apply bg-black text-white text-sm font-semibold py-1 px-2 hover:bg-accent duration-300;
   }
 
   .button-cancel Button {
@@ -107,6 +107,6 @@
   }
 
   .button-add Button {
-    @apply mb-14 bg-black text-white text-sm font-semibold py-1 px-2 hover:bg-accborder-accent duration-300;
+    @apply mb-14 bg-black text-white text-sm font-semibold py-1 px-2 hover:bg-accent duration-300;
   }
 }
