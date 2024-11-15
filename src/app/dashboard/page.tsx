@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import AdminAbout from "@/components/organism/AdminAbout";
+import "react-quill/dist/quill.snow.css";
 
 // Definisikan komponen placeholder untuk setiap halaman
 const components = {
