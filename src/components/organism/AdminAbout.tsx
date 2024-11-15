@@ -90,9 +90,11 @@ const AdminAbout = () => {
             </div>
             <label>Isi Content : </label>
             <ReactQuill theme="snow" value={(content ?? data.desc) || ""} onChange={setContent} modules={modules} formats={formats} />
-            {/* <div className="form-button">
-          <Button>Submit</Button>
-        </div> */}
+            <div className="form-button">
+              <button type="submit" className="button">
+                submit
+              </button>
+            </div>
           </form>
         </>
       ) : (
