@@ -4,12 +4,20 @@ import { getAbout } from "@/services/about.service";
 import { AboutResponse } from "@/types/response.types";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import ReactQuill from "react-quill";
 
 const AdminAbout = () => {
   const [data, setData] = useState<AboutResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [srcPreview, setSrcPreview] = useState<string | undefined>(undefined);
   const [srcPreview2, setSrcPreview2] = useState<string | undefined>(undefined);
+  const [content, setContent] = useState<string | undefined>(undefined);
+
+  const modules = {
+    toolbar: [[{ header: [1, 2, false] }], ["bold", "italic", "underline", "strike", "blockquote"], [{ list: "ordered" }, { list: "bullet" }, { indent: "-1" }, { indent: "+1" }], ["link", "image"], ["clean"]],
+  };
+
+  const formats = ["header", "bold", "italic", "underline", "strike", "blockquote", "list", "bullet", "indent", "link", "image"];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -79,9 +87,8 @@ const AdminAbout = () => {
                 />
               </section>
             </div>
-            <label htmlFor="main-content">Isi Content : </label>
-            <section dangerouslySetInnerHTML={{ __html: data.desc }} />
-            {/* <ReactQuill theme="snow" value={content} onChange={setContent} modules={modules} formats={formats} name="main-content" /> */}
+            <label>Isi Content : </label>
+            <ReactQuill theme="snow" value={(content ?? data.desc) || ""} onChange={setContent} modules={modules} formats={formats} />
             {/* <div className="form-button">
           <Button>Submit</Button>
         </div> */}
