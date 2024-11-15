@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import AdminAbout from "@/components/organism/AdminAbout";
 import "react-quill/dist/quill.snow.css";
 
@@ -20,15 +20,15 @@ const Dashboard = () => {
     <section className="admin-panel">
       <nav className="content-nav">
         <ul>
-          {Object.keys(components).map((component) => (
-            <>
-              <li key={component}>
+          {Object.keys(components).map((component, index) => (
+            <Fragment key={index}>
+              <li key={`component-${index}`}>
                 <a onClick={() => setHalaman(component as keyof typeof components)}>{component.charAt(0).toUpperCase() + component.slice(1)}</a>
               </li>
-              <li>
+              <li key={`slash-${index}`}>
                 <span>/</span>
               </li>
-            </>
+            </Fragment>
           ))}
         </ul>
       </nav>
