@@ -42,7 +42,6 @@ const AdminAbout = () => {
               <UploadImage previewImageSrc={srcPreview} defaultImageSrc={data.image1} setPreviewImageSrc={setSrcPreview} label="Gambar content 1 :" />
               <UploadImage previewImageSrc={srcPreview2} defaultImageSrc={data.image2} setPreviewImageSrc={setSrcPreview2} label="Gambar content 2 :" />
             </div>
-            <label>Isi Content : </label>
             <TextEditor defaultContent={data.desc || ""} setNewContent={setContent} newContent={content} label="Isi Content : " />
             <div className="form-button">
               <Button type={"submit"}>Submit</Button>
