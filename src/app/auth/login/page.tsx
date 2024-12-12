@@ -1,21 +1,21 @@
 "use client";
 
+import { login } from "@/services/auth.service";
 import Button from "@/components/atoms/Button";
 
-const Login = () => {
+const response = login("email", "password");
+
+const LoginPage = () => {
+  console.log(response);
+
   return (
     <form>
-      <div>
-        <label>Email: </label>
-        <input type="email" required />
-      </div>
-      <div>
-        <label>Password: </label>
-        <input type="password" required />
-      </div>
-      <Button type="submit">Login</Button>
+      <p>Login</p>
+      <input type="email" placeholder="email" name="email" />
+      <input type="password" placeholder="password" name="password" />
+      <Button>Login</Button>
     </form>
   );
 };
 
-export default Login;
+export default LoginPage;
