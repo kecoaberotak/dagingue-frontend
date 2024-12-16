@@ -2,18 +2,37 @@
 
 import { login } from "@/services/auth.service";
 import Button from "@/components/atoms/Button";
-
-const response = login("email", "password");
+import { useState } from "react";
 
 const LoginPage = () => {
-  console.log(response);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const response = await login(email, password);
+
+    if (response.success) {
+      console.log(`${response.message}, role: ${response.role}`);
+      // simpan role atau token jika diperlukan
+    } else {
+      setError(response.error);
+    }
+  };
 
   return (
-    <form>
-      <p>Login</p>
-      <input type="email" placeholder="email" name="email" />
-      <input type="password" placeholder="password" name="password" />
-      <Button>Login</Button>
+    <form onSubmit={handleLogin}>
+      <div>
+        <label>Email:</label>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+      </div>
+      <div>
+        <label>Password:</label>
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+      </div>
+      {error && <p className="text-secondary">{error}</p>}
+      <Button type="submit">Login</Button>
     </form>
   );
 };
