@@ -17,7 +17,7 @@ const LoginPage = () => {
       console.log(`${response.message}, role: ${response.role}`);
       // simpan role atau token jika diperlukan
     } else {
-      setError(response.error);
+      setError(response.message);
     }
   };
 
