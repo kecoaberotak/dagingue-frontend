@@ -18,25 +18,16 @@ export const login = async (email: string, password: string) => {
       success: true,
       role: response.data.role, // role dari API
       user: userCredential.user,
+      message: "Login Success",
     };
   } catch (error: unknown) {
-    if (axios.isAxiosError(error)) {
-      throw new Error(
-        JSON.stringify({
-          status: error.response?.data?.status || false,
-          statusCode: error.response?.data?.statusCode || 500,
-          message: error.response?.data?.message || "Unexpected error occurred",
-        })
-      );
-    } else {
-      throw new Error(
-        JSON.stringify({
-          status: false,
-          statusCode: 500,
-          message: "Internal server error",
-        })
-      );
-    }
+    const errorMessage = error instanceof Error ? error.message : "An unknown error occurred";
+    return {
+      success: false,
+      role: null, // role tidak ada jika gagal
+      user: null, // user juga null jika gagal
+      message: errorMessage,
+    };
   }
 };
 
@@ -44,14 +35,9 @@ export const login = async (email: string, password: string) => {
 export const logout = async () => {
   try {
     await signOut(auth); // logout dari Firebase Auth
+    return { success: true, message: "Logout success" };
   } catch (error: unknown) {
-    // BENERIN LAGI ERRORNYA!!!
-    throw new Error(
-      JSON.stringify({
-        status: false,
-        statusCode: 500,
-        message: error,
-      })
-    );
+    const errorMessage = error instanceof Error ? error.message : "An unknown error occurred";
+    return { success: false, error: errorMessage };
   }
 };
